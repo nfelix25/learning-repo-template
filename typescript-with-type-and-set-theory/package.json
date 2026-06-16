@@ -1,0 +1,10 @@
+{
+  "name": "typescript-with-type-and-set-theory",
+  "private": true,
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}

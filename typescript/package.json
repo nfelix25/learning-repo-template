@@ -1,0 +1,22 @@
+{
+  "name": "typescript-koans",
+  "version": "1.0.0",
+  "description": "Exhaustive intermediate-to-advanced TypeScript koans",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "temporal-polyfill": "^0.3.2",
+    "tsx": "^4.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^3.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

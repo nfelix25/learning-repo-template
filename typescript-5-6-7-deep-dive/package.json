@@ -1,0 +1,11 @@
+{
+  "name": "typescript-5-6-7-deep-dive",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "verify": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.0"
+  }
+}

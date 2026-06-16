@@ -1,0 +1,19 @@
+# Deep Research Prompt: Disposal Symbols And Modern Protocols
+
+**Target tool**: Gemini Deep Research (or comparable)
+**Intended use**: Audio-friendly content for NotebookLM
+**Lesson**: openspec/changes/20-disposal-symbols-and-modern-protocols/
+
+## Prompt
+
+Research why this lesson's symbol concepts exist and what design pressure they answer. Anchor the discussion to these concepts only: Symbol.dispose; Symbol.asyncDispose; explicit resource management; protocol design in newer ECMAScript. Focus on historical motivation, mental models, adjacent concepts, and the tradeoffs that made this part of JavaScript's object and protocol model necessary. Avoid syntax walkthroughs and avoid expanding into a full survey of JavaScript Symbols.
+
+Compare the concepts in this lesson with nearby alternatives a developer might reach for. Explain when the symbol-based mechanism is the right fit, when it is a poor fit, and which common misunderstandings lead to bugs or overuse. Prefer narrative explanations, concrete design contrasts, and memorable edge cases that would work well in an audio summary.
+
+Close by identifying the one or two judgment questions a learner should be able to answer after hearing this research: what problem is being solved, what behavior is guaranteed, and what behavior is only convention or tooling support.
+
+## Source priority (paste into research tool if it accepts source hints)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/dispose
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/asyncDispose
+- https://tc39.es/proposal-async-explicit-resource-management/
+- https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-symbol-objects

@@ -1,0 +1,11 @@
+{
+  "name": "zod-internals-koans",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --noEmit --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

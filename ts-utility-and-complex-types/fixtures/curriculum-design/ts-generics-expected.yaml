@@ -1,0 +1,132 @@
+phase_1_koans:
+  - id: 01-parameters-and-inference
+    depends_on: []
+    type: koan
+    currency: stable
+    audio_value: low
+    estimated_minutes: 25
+    concepts: [generic functions, call-site inference, explicit type args]
+
+  - id: 02-multiple-parameters
+    depends_on: [01-parameters-and-inference]
+    type: koan
+    currency: stable
+    audio_value: low
+    estimated_minutes: 25
+    concepts: [multi-param inference, inference between parameters, when inference fails]
+
+  - id: 03-constraints
+    depends_on: [02-multiple-parameters]
+    type: koan
+    currency: stable
+    audio_value: medium
+    estimated_minutes: 30
+    concepts: [extends clause, keyof constraints, constraint vs inference interaction]
+
+  - id: 04-defaults
+    depends_on: [03-constraints]
+    type: koan
+    currency: stable
+    audio_value: low
+    estimated_minutes: 20
+    concepts: [type parameter defaults, defaults with constraints, library API patterns]
+
+  - id: 05-variance
+    depends_on: [03-constraints]
+    type: koan
+    currency: stable
+    audio_value: high
+    estimated_minutes: 45
+    concepts: [covariance, contravariance, function param contravariance, strictFunctionTypes, method bivariance]
+    framing_notes: |
+      Compare to parametric polymorphism in Haskell/ML: introduce variance
+      via subtyping and substitutability; note where TS differs (bivariance
+      for method parameters).
+
+  - id: 06-inference-deep-dive
+    depends_on: [02-multiple-parameters]
+    type: koan
+    currency: stable
+    audio_value: high
+    estimated_minutes: 40
+    concepts: [contextual typing, inference candidates, type widening, when to annotate explicitly]
+
+  - id: 07-branded-types-with-generics
+    depends_on: [03-constraints, 06-inference-deep-dive]
+    type: koan
+    currency: stable
+    audio_value: medium
+    estimated_minutes: 40
+    concepts: [nominal typing via brands, Branded<T,Tag> pattern, unique symbol brands, smart constructors, brand erasure]
+
+  - id: 08-conditional-types-basics
+    depends_on: [03-constraints]
+    type: koan
+    currency: stable
+    audio_value: medium
+    estimated_minutes: 30
+    concepts: [T extends U ? X : Y, NonNullable, Exclude/Extract internals]
+
+  - id: 09-distributive-conditionals
+    depends_on: [08-conditional-types-basics]
+    type: koan
+    currency: stable
+    audio_value: high
+    estimated_minutes: 35
+    concepts: [naked type parameter rule, distribution over unions, opting out with tuple wrapping]
+
+  - id: 10-infer
+    depends_on: [08-conditional-types-basics]
+    type: koan
+    currency: versioned
+    audio_value: medium
+    estimated_minutes: 40
+    concepts: [infer keyword, ReturnType/Parameters/Awaited internals, multiple infer, infer extends (TS 4.7+)]
+
+phase_2_build:
+  - id: 11-result-type-design
+    depends_on: [05-variance, 06-inference-deep-dive, 07-branded-types-with-generics]
+    type: build_piece
+    currency: stable
+    audio_value: high
+    estimated_minutes: 60
+    concepts: [discriminated unions with generics, Result<E,T> variance decisions, constructor design]
+    build_piece_role: "Defines Result<E,T> data type and Ok/Err constructors."
+
+  - id: 12-result-combinators
+    depends_on: [11-result-type-design]
+    type: build_piece
+    currency: stable
+    audio_value: medium
+    estimated_minutes: 60
+    concepts: [map/flatMap with generic threading, mapErr, type-narrowing in combinators]
+    build_piece_role: "Adds map, flatMap, mapErr, and type-guard helpers."
+
+  - id: 13-recursive-conditionals
+    depends_on: [12-result-combinators, 10-infer]
+    type: koan
+    currency: versioned
+    audio_value: medium
+    estimated_minutes: 45
+    concepts: [recursive conditional types, variadic tuple inference, infer F ...infer R, recursion depth limits]
+    framing_notes: |
+      Motivation comes from the next lesson (Result.all). Introduce the
+      mechanics here just-in-time so they land with motivation intact.
+
+  - id: 14-result-all-tuple-inference
+    depends_on: [13-recursive-conditionals]
+    type: build_piece
+    currency: stable
+    audio_value: medium
+    estimated_minutes: 75
+    concepts: [Result.all over tuples, mapped types over tuples, error-union extraction]
+    build_piece_role: "Adds Result.all and tuple-inference helpers."
+
+  - id: 15-result-async-and-polish
+    depends_on: [14-result-all-tuple-inference]
+    type: build_piece
+    currency: stable
+    audio_value: low
+    estimated_minutes: 45
+    concepts: [Result.fromPromise, async combinators, public API surface decisions]
+    build_piece_role: "Adds async combinators and finalizes public API."

@@ -1,0 +1,28 @@
+{
+  "name": "typescript-decorators-koans",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal TypeScript decorators koans for modern and legacy decorator models.",
+  "scripts": {
+    "clean:legacy": "node -e \"import { rmSync } from 'node:fs'; rmSync('.koan-build', { recursive: true, force: true });\"",
+    "test": "npm run test:modern && npm run test:legacy",
+    "test:modern": "tsx --tsconfig tsconfig.json --test koans/0*/exercise.test.ts",
+    "test:legacy": "npm run clean:legacy && tsc -p tsconfig.legacy.test.json && node --test .koan-build/legacy/koans/9*/exercise.test.js",
+    "test:koan": "tsx --tsconfig tsconfig.json --test",
+    "test:koan:legacy": "npm run clean:legacy && tsc -p tsconfig.legacy.test.json && node --test",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:legacy": "tsc --noEmit -p tsconfig.legacy.json"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

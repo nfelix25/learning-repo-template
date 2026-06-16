@@ -1,0 +1,17 @@
+{
+  "name": "learning-repo-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Template and agent skills for bootstrapping OpenSpec-driven TypeScript learning projects.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "verify": "npm run typecheck && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}

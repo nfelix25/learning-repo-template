@@ -1,0 +1,22 @@
+{
+  "name": "observer-and-state-patterns-via-ts-koans",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "TypeScript koans for learning observer, observable, state, and signal/reactivity patterns from scratch.",
+  "scripts": {
+    "koans": "node scripts/run-koans.mjs",
+    "koans:section": "node scripts/run-section.mjs",
+    "test": "npm run koans",
+    "typecheck": "tsc --noEmit",
+    "validate:structure": "node scripts/validate-structure.mjs",
+    "check": "npm run typecheck && npm run validate:structure"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

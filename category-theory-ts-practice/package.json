@@ -1,0 +1,12 @@
+{
+  "name": "category-theory-ts-practice",
+  "private": true,
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+.koan-build/
+coverage/
+dist/
+*.tsbuildinfo
+.DS_Store
